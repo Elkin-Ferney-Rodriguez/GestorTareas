@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestión de Tareas</h1>
+    <form id="taskForm">
+        <input type="text" name="title" placeholder="Título" required />
+        <textarea name="description" placeholder="Descripción" required></textarea>
+        <input type="date" name="due_date" required />
+        <input type="time" name="due_time" required />
+       
+        <button type="submit">Guardar</button>
+        <button type="button" id="toggleTasksButton">Ver Tareas</button>
+    </form>
+    
+    <!-- Tabla para mostrar las tareas -->
+    <table id="taskTable">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Fecha de Entrega</th>
+                <th>Hora de Entrega</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="taskList"></tbody>
+    </table>
+
+    <script src="./src/componentes/main.ts" type="module"></script>
+</body>
+</html>

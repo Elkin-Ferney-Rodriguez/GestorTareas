@@ -1,0 +1,26 @@
+{
+    "name": "astro",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/tailwind": "^5.1.0",
+        "astro": "^4.15.9",
+        "git": "^0.1.5",
+        "tailwindcss": "^3.4.10"
+    },
+    "description": "```sh npm create astro@latest -- --template minimal ```",
+    "main": "index.js",
+    "keywords": [],
+    "author": "Elkin Rodriguez",
+    "license": "ISC",
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.15"
+    }
+}
