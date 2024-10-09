@@ -12,7 +12,7 @@ services:
     environment:
       - BACKEND_URL=http://backend:8000
     volumes:
-      -./GestorTareas
+      - ./GestorTareas:/app  # Montar el directorio de GestorTareas en /app dentro del contenedor
 
   backend:
     build:
@@ -26,7 +26,12 @@ services:
       - proyectos
     environment:
       - DATABASE_URL=postgresql://root:root@postgres_proyectos:5432/proyecto
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Montar un volumen para persistir los datos de PostgreSQL
 
 networks:
   proyectos:
     external: true
+
+volumes:
+  pgdata:  # Definir el volumen pgdata para el backend
