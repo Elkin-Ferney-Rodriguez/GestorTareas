@@ -1,0 +1,32 @@
+services:
+  frontend:
+    build:
+      context: ./GestorTareas
+      dockerfile: Dockerfile
+    container_name: ASTROPROYECTO
+    restart: always
+    ports:
+      - "4321:4321"
+    networks:
+      - proyectos
+    environment:
+      - BACKEND_URL=http://backend:8000
+    volumes:
+      -./GestorTareas
+
+  backend:
+    build:
+      context: ./APIGESTORTAREAS
+      dockerfile: Dockerfile
+    container_name: APIPROYECTO
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - proyectos
+    environment:
+      - DATABASE_URL=postgresql://root:root@postgres_proyectos:5432/proyecto
+
+networks:
+  proyectos:
+    external: true
